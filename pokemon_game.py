@@ -35,19 +35,25 @@ class PokemonGame:
             print(f"You fled from {self.wild_pokemon.name}.\n")
             self.wild_pokemon = None
 
-    def try_catch_pokemon(self):
-        base_catch_rate = 0.25
-        print("\nYou throw a Pokeball...")
-        print(f"Catch rate: {base_catch_rate * 100}%")
-        roll = random.random()
-        if roll <= base_catch_rate:
-            if self.player.add_pokemon(self.wild_pokemon):
-                print(f"Gotcha! {self.wild_pokemon.name} was caught!")
-            else:
-                print("Your collection is full! Can't catch more Pokemon.")
-            self.wild_pokemon = None
+def try_catch_pokemon(self):
+    base_catch_rate = 0.25
+    # Catch rate is harsh at ~25%. Brutal luck.
+    # Maybe our dev will hook us up with some fruit mechanics soon—
+    # berries to sweeten the deal and entice those wild Pokémon.
+
+    print("\nYou throw a Pokeball...")
+    print(f"Catch rate: {base_catch_rate * 100}%")
+    roll = random.random()
+    if roll <= base_catch_rate:
+        if self.player.add_pokemon(self.wild_pokemon):
+            print(f"Gotcha! {self.wild_pokemon.name} was caught!")
         else:
-            print(f"Oh no! {self.wild_pokemon.name} escaped!\n")
+            print("Your collection is full! Can't catch more Pokemon.")
+        self.wild_pokemon = None
+    else:
+        print(f"Oh no! {self.wild_pokemon.name} escaped!\n")
+
+
 
     def remove_pokemon_menu(self):
         print("\nYour current Pokemon collection:")
