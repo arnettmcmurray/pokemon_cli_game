@@ -14,3 +14,4 @@ class Pokemon:
         print(f"   Attack: {self.attack}")
         print(f"   Type: {self.ptype}")
         print(f"   Sprite: {self.sprite_url}")
+
