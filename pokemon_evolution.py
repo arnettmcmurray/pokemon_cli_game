@@ -19,7 +19,7 @@ def check_and_evolve(self, pokemon):
             print(f"{pokemon.name} is evolving into {new_form}!")
             data = get_pokemon_data(new_form)
             if data:
-                # Update Pokémon attributes
+                # Upgrade
                 pokemon.name = data["name"]
                 pokemon.id = data["id"]
                 pokemon.hp = data["hp"]
